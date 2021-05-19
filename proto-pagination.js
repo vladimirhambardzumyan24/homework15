@@ -17,7 +17,8 @@ let Pagination = {
     return Pagination.books[Pagination.page - 1];
   },
   nextPage: function () {
-    return Pagination.books[Pagination.page++];
+    Pagination.page++
+    return Pagination;
   },
   firstPage: function () {
     return Pagination.books[0];
@@ -32,7 +33,7 @@ let Pagination = {
 const alphabetArray = "abcdefghijklmnopqrstuvwxyz".split("");
 Pagination.init(alphabetArray, 4);
 console.log(Pagination.getPageItems());
-console.log(Pagination.nextPage());
+Pagination.nextPage().nextPage();
 console.log(Pagination.getPageItems());
 console.log(Pagination.firstPage());
 console.log(Pagination.lastPage());
